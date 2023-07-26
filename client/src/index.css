@@ -1,0 +1,24 @@
+:root {
+  --vert : #104d4d;
+  --beige: #f0eee0ff;
+  --marron: #a47051ff;
+  --light:300;
+  --regular: 400;
+  --medium:500;
+  --bold:800;
+  --extrabold:900
+
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; ;
+  margin: 0;
+
+}
+
+body {
+  margin: 0px;
+  background-color: var(--beige);
+}
