@@ -3,7 +3,8 @@ import dbConnection from "../service/dbconnexion.js";
 const getRole = async () => {
     const sql = `
           SELECT role.*
-          FROM  savefood.role;`
+          FROM  savefood.role;
+          `
     
     try {
         const [results] = await dbConnection.execute(sql);

@@ -9,4 +9,5 @@ const dbConnection = await mysql.createConnection({
     namedPlaceholders: true,
 });
 
+
 export default dbConnection;

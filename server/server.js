@@ -4,16 +4,22 @@ import https from 'node:https';
 import * as dotenv from 'dotenv';
 import restaurantRouter from './routes/restaurant.js';
 import rolesRouter from './routes/role.js';
+import visitorRouter from './routes/visitor.js';
+import cors from 'cors';
 
 // routeur
 const app = express();
 const router = express.Router();
 app.use(router);
 
+router.use(cors());
+router.use(express.json());
+
 // liste des routeurs
 // router.get('/', (req, res) => res.status(200).json('coucou reshma'));
 // router.use('/api/restaurant', restaurantRouter);
 router.use('/api/roles', rolesRouter);
+router.use('/api/visitor', visitorRouter);
 
 // https
 const options = {

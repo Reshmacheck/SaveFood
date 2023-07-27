@@ -9,4 +9,4 @@ const roles = (req, res) => {
         });
     })
 }
-export { roles }
+export { roles };

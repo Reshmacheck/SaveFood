@@ -58,3 +58,17 @@ INSERT INTO savefood.role VALUES
 ;
 -- 1/ INSERT LES OBJETs
 -- 2/ verifier les selects
+
+INSERT INTO savefood.visitor VALUES
+    (NULL, 'check', 'reshma', '123@hotmail.fr', 'xxxxx', '6,rue henri 93600 aulnay sous bois', 3),
+    (NULL, 'marc', 'prity', '12@hotmail.fr', 'ppppp', '8,rue henri 93600 aulnay sous bois', 1)
+    ;
+
+
+INSERT INTO savefood.product VALUES
+    (NULL, 'chocolat', 'reshma', '123@hotmail.fr', 'xxxxx', '6,rue henri 93600 aulnay sous bois', 3),
+    (NULL, 'marc', 'prity', '12@hotmail.fr', 'ppppp', '8,rue henri 93600 aulnay sous bois', 1)
+    ;
+
+
+ 
