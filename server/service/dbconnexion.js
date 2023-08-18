@@ -7,6 +7,7 @@ const dbConnection = await mysql.createConnection({
     user: config.db.user,
     password: config.db.password,
     namedPlaceholders: true,
+    charset: 'utf8mb4'
 });
 
 

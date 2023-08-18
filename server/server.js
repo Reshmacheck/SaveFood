@@ -5,6 +5,7 @@ import * as dotenv from 'dotenv';
 import restaurantRouter from './routes/restaurant.js';
 import rolesRouter from './routes/role.js';
 import visitorRouter from './routes/visitor.js';
+import productRouter from './routes/product.js';
 import cors from 'cors';
 
 // routeur
@@ -16,10 +17,12 @@ router.use(cors());
 router.use(express.json());
 
 // liste des routeurs
-// router.get('/', (req, res) => res.status(200).json('coucou reshma'));
+// router.get('/', (req, res) => res.status(200).json('coucou'));
 // router.use('/api/restaurant', restaurantRouter);
 router.use('/api/roles', rolesRouter);
 router.use('/api/visitor', visitorRouter);
+router.use('/api/product', productRouter);
+router.use('/api/restaurant', restaurantRouter);
 
 // https
 const options = {

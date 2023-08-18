@@ -1,11 +1,11 @@
 import dbConnection from "../service/dbconnexion.js";
 
-const getVisitor = async () => {
+const getAllVisitor = async () => {
     const sql = `SELECT visitor.*,role.name
         FROM savefood.visitor 
         JOIN savefood.role 
-        ON role.id = visitor.role_id ;
-    `;
+        ON role.id = visitor.role_id;
+    `
  
     try {
         const [results] = await dbConnection.execute(sql);
@@ -30,4 +30,4 @@ const createOneVisitor = async (data) => {
 };
 
 
-export { getVisitor, createOneVisitor}
+export { getAllVisitor, createOneVisitor}

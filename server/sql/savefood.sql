@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS savefood;
 
 CREATE DATABASE savefood;
 
+ALTER DATABASE savefood CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
 CREATE TABLE savefood.role(
     id TINYINT(1) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(15) NOT NULL UNIQUE
@@ -26,7 +28,10 @@ CREATE TABLE savefood.restaurant(
     photo VARCHAR(100),
     apercu VARCHAR(200),
     numero VARCHAR(20),
-    status VARCHAR(30) NOT NULL
+    status VARCHAR(30) NOT NULL,
+    visitor_id INT UNSIGNED,
+    FOREIGN KEY(visitor_id) REFERENCES savefood.visitor(id)
+
 );
 
 CREATE TABLE savefood.product(
@@ -34,7 +39,7 @@ CREATE TABLE savefood.product(
     nom VARCHAR(50) NOT NULL,
     apercu VARCHAR(200),
     photo VARCHAR(100),
-    dateexpiration DATETIME NOT NULL,
+    dateexpiration DATE NOT NULL,
     price DECIMAL(4,2) NOT NULL,
     initial_price DECIMAL(4,2) NOT NULL,
     quantity TINYINT(2) NOT NULL,
@@ -65,10 +70,15 @@ INSERT INTO savefood.visitor VALUES
     ;
 
 
-INSERT INTO savefood.product VALUES
-    (NULL, 'chocolat', 'reshma', '123@hotmail.fr', 'xxxxx', '6,rue henri 93600 aulnay sous bois', 3),
-    (NULL, 'marc', 'prity', '12@hotmail.fr', 'ppppp', '8,rue henri 93600 aulnay sous bois', 1)
-    ;
+INSERT INTO savefood.restaurant VALUES 
+     (NULL, 'pizzaria', 'pizzaria@hotmail.fr', '4, rue belfort, 93000 bobigny','','notre magasin propose les meilleur pizza du monde','0147657793', 'true', 1),
+     (NULL, 'kashmir', 'kashmir@hotmail.fr', '9, allée des aulnes, 94000 creteil','kashmir.png','Venez aventurer les spécialité indienne','0190654535', 'true', 1)
+    ;    
+
+ INSERT INTO savefood.product VALUES
+    (NULL, 'Pizza Norvegiène', 'saumon, mozarella, herbe de province','', '2023-07-29', 3.50 , 10.50 , 3, 1),
+    (NULL, 'cheez naan', 'fromage, pate, moelleux','', '2023-07-30', 0.50 , 2.50 , 5, 2)
+     ;
 
 
  

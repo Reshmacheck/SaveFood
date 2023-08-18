@@ -1,7 +1,7 @@
-import { getVisitor, createOneVisitor } from "../repositories/visitorRepo.js"
+import { getAllVisitor, createOneVisitor } from "../repositories/visitorRepo.js"
 
-const visitor = (req, res) => {
-    getVisitor().then(data => {
+const allVisitor = (req, res) => {
+    getAllVisitor().then(data => {
         return res.status(200).json({
             status: 200,
             message: "OK",
@@ -23,4 +23,4 @@ const createVisitor = (req, res) => {
     })
 }
 
-export { visitor, createVisitor };
+export { allVisitor, createVisitor };

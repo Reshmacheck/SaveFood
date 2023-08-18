@@ -1,9 +1,10 @@
  import express from 'express';
- import { index }  from '../controllers/restaurantController.js';
+ import { allRestaurant, createRestaurant }  from '../controllers/restaurantController.js';
 
  const restaurantRouter = express.Router();
 
- restaurantRouter.get('/', index);
+restaurantRouter.get('/', allRestaurant);
+restaurantRouter.post('/',createRestaurant)
 
  export default restaurantRouter;
 
