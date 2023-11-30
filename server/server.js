@@ -13,6 +13,15 @@ const app = express();
 const router = express.Router();
 app.use(router);
 
+app.use(cors(
+    {
+        origin: [""],
+        methods: ["POST, GET"],
+        credentials: true
+
+    }
+))
+
 router.use(cors());
 router.use(express.json());
 

@@ -3,8 +3,8 @@ import dbConnection from "../service/dbconnexion.js";
 const getAllRestaurant = async () => {
     const sql = `SELECT restaurant.*
         FROM savefood.restaurant
-        JOIN savefood.visitor
-        ON visitor.id = restaurant.visitor_id;
+        JOIN savefood.role
+        ON role.id = restaurant.role_id;
     `
     try {
         const [results] = await dbConnection.execute(sql);
@@ -17,7 +17,7 @@ const getAllRestaurant = async () => {
 
 const createOneRestaurant = async (data) => {
     const sql = `
-       INSERT INTO savefood.restaurant VALUES (NULL, :nom, :email, :adress, :photo, :apercu, :numero, :status, :visitor_id);
+       INSERT INTO savefood.restaurant VALUES (NULL, :nom, :email, :motdepasse :adress, :photo, :apercu, :numero, :status, :role_id);
        `;
     
     try {
