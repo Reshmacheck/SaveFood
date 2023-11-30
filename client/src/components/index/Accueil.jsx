@@ -8,7 +8,7 @@ const Accueil = () => {
       <section className="image">
     <img className="header-image" src={environnement} alt="image de plante" />
     <p className="recherche">Luttons contre le gaspillage</p>
-  </section>
+      </section>
     </>
 };
 export default Accueil

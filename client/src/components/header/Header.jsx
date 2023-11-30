@@ -1,6 +1,6 @@
 import "./header.css";
 // import bol from "../../assets/bol.jpg";
-// import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 
 const Header = () => {
@@ -10,7 +10,7 @@ const Header = () => {
           <div className="nav">
             <input type="checkbox" id="nav-check" />
             <div className="nav-header">
-              <a href="#">
+              <a href="/">
                 <h1 className="nav-title">SaveFood</h1>
               </a>
             </div>
@@ -22,9 +22,18 @@ const Header = () => {
               </label>
             </div>
             <div className="nav-links">
-              <a href="/contact.html">Nous contacter</a>
-              <a className="connexion">Connexionnn</a>
-              <a className="inscription">Inscription</a>
+              <Link to="/Register">
+              <a className="a-propos">A propos</a>
+            </Link>
+            <Link to="/Register">
+              <a className="connexion">Connexion</a>
+            </Link>
+            <Link to="/Contact">
+              <a className="contact">Contact</a>
+            </Link>
+            
+           
+            
             </div>
           </div>
         </nav>
