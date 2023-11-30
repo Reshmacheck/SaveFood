@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom'
 
 const HeaderVisitor = () => {
   return <>
-      
           <header className="header">
           <nav>
             <div className="nav">
