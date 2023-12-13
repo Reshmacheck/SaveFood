@@ -1,0 +1,93 @@
+.side-nav{
+    margin-top: 50px;
+    display: flex;
+    width: 20%;
+    height: 100%;
+    border: 3px solid  #a47051ff;
+    border-left: none;
+    border-bottom: none;
+    border-top: none; 
+    
+}
+
+.link {
+    color: black; /* Couleur par défaut pour les liens */
+  }
+  
+.active-link {
+    color: #104d4d; /* Couleur lorsque le lien est actif */
+  }
+
+
+.side-nav .link:hover {
+    color: #104d4d;
+}
+
+.side-nav .delete:hover {
+    color: rgb(159, 28, 28)
+}
+
+li{
+    margin: 40px;
+    list-style: none;
+    
+}
+ul{
+    text-align: center;
+}
+
+li a {
+    font-size: 18px;
+    
+}
+
+.lolo{
+    display: flex;
+}
+
+
+
+
+
+
+@media (max-width:1216px) {
+   
+    .lolo {
+        display: block;
+    }
+    ul{
+        display: flex;
+        padding-left:0;
+        
+    }
+    li{
+        margin: auto;
+        
+    }
+    
+    .side-nav{
+        width: 100%;
+        border-right: none;
+    }
+    .contenu{
+        width: 100%;
+       
+    }
+
+}
+
+@media (max-width:806px){
+    
+    li a {
+        font-size: 16px;
+        
+    }
+}
+
+@media (max-width:647px){
+    
+    li a {
+        font-size: 14px;
+        
+    }
+}

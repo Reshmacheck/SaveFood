@@ -1,0 +1,88 @@
+import { useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { UserContext } from "../context/UserContext";
+import axios from 'axios';
+import HeaderVisitor from "../components/header/headerVisitor";
+import SideNav from "../components/sideNav/SideNav";
+import "./updateVisitor.css"
+
+
+const UpdateVisitor = () => {
+    const { user, setUser } = useContext(UserContext);
+    const { id } = useParams();
+    const navigate = useNavigate
+    useEffect(() => {
+        axios.get(`https://localhost:3000/api/visitor/${user.id}`)
+            .then(res => {
+                console.log(res)
+                setValues({
+                    ...values,
+                    lastname: res.data.data[0].lastname,
+                    email: res.data.data[0].email,
+                    motdepasse: res.data.data[0].motdepasse,
+                    ville: res.data.data[0].ville,
+                    role_id: res.data.data[0].role_id
+                });
+            })
+        .catch(err => console.log(err))
+    }, [])
+
+    const [values, setValues] = useState({
+        lastname: '',
+        email: '',
+        motdepasse: '',
+        ville: '',
+        role_id: user.role_id
+    })
+
+    const handleUpdate = (event) => {
+        event.preventDefault();
+        axios.put(`https://localhost:3000/api/visitor/${user.id}`, values)
+            .then(res => {          
+                
+                console.log(res)
+            }).catch(err => console.log(err));
+        
+            if (response.status === 200) {
+                //setUser(response.data);
+                // setdelete(true)
+                navigate(`/uservisitor/${user.id}`);
+            }
+    }
+
+    return (<>
+        <HeaderVisitor /> 
+        <div>
+          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hi {user.lastname}</h1>
+        </div>
+        <div className="lolo">
+            <SideNav/>
+            <section className="contenu">
+            <form onSubmit={handleUpdate}>
+            <h2>update</h2>
+            
+            <div>
+                <label htmlFor="">Nom</label>
+                <input type="text" value={values.lastname} onChange={e => setValues({...values, lastname: e.target.value})} />
+            </div>
+            <div>
+                <label htmlFor="">Email</label>
+                <input type="email" value={values.email} onChange={e => setValues({...values, email: e.target.value})} />
+            </div>
+            <div>
+                <label htmlFor="">Mot de passe</label>
+                <input type="password" value={values.motdepasse} onChange={e => setValues({...values, motdepasse: e.target.value})} />
+            </div>
+            <div>
+                <label htmlFor="">Ville</label>
+                <input type="text" value={values.ville } onChange={e => setValues({...values, ville: e.target.value})} />
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+            </section>
+            </div>
+        
+    </>)
+}
+
+export default UpdateVisitor

@@ -58,7 +58,7 @@ const checkVisitorLogin = async (req, res) => {
         
         if (visitor[0].role === "restaurater") {
             // visitor = await dbConnection.query("SELECT visitor.*, role.name AS role FROM visitor JOIN role ON role.id = visitor.role_id  WHERE email = ?", [email]);
-            visitor = await dbConnection.query("SELECT visitor.*, role.name AS role, restaurant.*, restaurant.id AS restaurant_id FROM visitor JOIN role ON role.id = visitor.role_id JOIN restaurant ON restaurant.id = visitor.restaurant_id WHERE email = ?", [email]);
+            visitor = await dbConnection.query("SELECT visitor.*, role.name AS role, restaurant.id AS restaurant_id, restaurant.nom, restaurant.adresse, restaurant.photo, restaurant.apercu, restaurant.numero, restaurant.status FROM visitor JOIN role ON role.id = visitor.role_id JOIN restaurant ON restaurant.id = visitor.restaurant_id WHERE email = ?", [email]);
 
             // console.log(visitor);
 
@@ -93,29 +93,35 @@ const visitorById = async (req, res) => {
         const { id } = req.params;
         const [rows, fields] = await dbConnection.query("select * from visitor where id = ?", [id]);
         res.json({
-            data: rows
+            data: rows,
+            message : " select visitor succesfully by id"
+            
         });
     } catch (error) {
         console.log(error);
         res.json({
-            status: "error"
+            status: 500
         });
     }
 };
 
 const updateVisitor = async (req, res) => {
+    
     try {
         const { lastname, email, motdepasse, ville, role_id } = req.body
         const { id } = req.params
         const sql = "update visitor set lastname = ?, email = ?, motdepasse = ?, ville = ?, role_id = ? where id = ?"
         const [rows, fields] = await dbConnection.query(sql, [lastname, email, motdepasse, ville, role_id, id])
         res.json({
+            status: 200,
+            message: "updated succesfully",
             data: rows
         })
     } catch (error) {
         console.log(error);
         res.json({
-            status: "error"
+            status: 500 ,
+            message: "not updated"
         });
     }
 };

@@ -45,7 +45,7 @@ const Form = () => {
     // stocker le user dans le contexte
     if (response.status === 200) {
       setUser(response.data);
-      navigate('/uservisitor');
+      navigate(`/uservisitor`);
     }
     // console.log(response);
     
@@ -146,14 +146,16 @@ const Form = () => {
           <label htmlFor="user" className="label">
             Nom
           </label>
-          <input id="user" type="text" className="input" name="lastname" />
+                <input
+                  // id="user"
+                  type="text" className="input" name="lastname" />
         </div>
         <div className="group">
           <label htmlFor="pass" className="label">
             Mot de passe
           </label>
           <input
-            id="pass"
+            // id="pass"
             type="password"
             className="input"
                   data-type="password"
@@ -175,7 +177,10 @@ const Form = () => {
           <label htmlFor="pass" className="label">
             Adresse email 
           </label>
-          <input id="pass" type="text" className="input" name="email" />
+                <input
+                  // id="pass"
+                  type="text"
+                  className="input" name="email" />
               </div>
             <div className="group">
           <label htmlFor="pass" className="label">
