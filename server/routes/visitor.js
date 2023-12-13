@@ -8,7 +8,7 @@ visitorRouter.get('/', allVisitor);
 visitorRouter.get('/:id', visitorById);
 visitorRouter.post('/signup', createVisitor);
 visitorRouter.post('/login', checkVisitorLogin);
-visitorRouter.put('/modify/:id', updateVisitor);
+visitorRouter.put('/:id', updateVisitor);
 visitorRouter.delete('/:id', deleteVisitor);
 
 export default visitorRouter;

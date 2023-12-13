@@ -1,0 +1,21 @@
+.contenu {
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 75%;
+    border: 3px solid  #a47051ff;
+}
+
+.lolo{
+    display: flex;
+}
+
+@media (max-width:1216px) {
+    .lolo {
+        display: block;
+    }
+
+    .contenu{
+        width: 100%;
+       
+    }
+}

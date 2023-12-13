@@ -1,41 +1,10 @@
-// import { useState, useEffect } from "react";
-// import { getAllProduct } from "../service/api.jsx";
-
-
-// const AllProduct = () => {
-//     const [product, setProduct] = useState([]);
-
-
-//     useEffect(() => {
-//         getAllProduct()
-//             .then((data) => {
-//                 if (data && data.data) {
-//                     console.log(data.data[0])
-//                     setProduct(data.data);
-//                 }
-//             })
-//             .catch((error) => {
-//                 console.error(error);
-//             });
-//     }, []);
-
-//     return (
-//         <div>
-//             <h1>hello product is here</h1>
-//             <p>Voici vos liste de product:{product[0]}</p>
-
-//         </div>
-
-//     )
-   
-// }
-// export default AllProduct
-
 
 import React, { useState, useEffect, useContext } from "react";
 import { getAllProduct } from "../service/api.jsx";
 import HeaderVisitor from "../components/header/headerVisitor.jsx";
 import { UserContext } from "../context/UserContext.jsx";
+import "./product.css"
+import SideNav from "../components/sideNav/SideNav.jsx";
 
 const AllProduct = () => {
     const [product, setProduct] = useState([]);
@@ -46,7 +15,6 @@ const AllProduct = () => {
     useEffect(() => {
         // console.log(user);
         getAllProduct()
-            
             .then((data) => {
                 if (data && data.data) {
                     // console.log(data.data);
@@ -69,17 +37,25 @@ const AllProduct = () => {
         return <p>Error: {error}</p>;
     }
 
-    <HeaderVisitor />
+   
 
     return (
-        <div>
-            <h1>Hello { user.lastname }, products are here</h1>
+        <>
+            <HeaderVisitor />
+            <div>
+          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hi {user.lastname}</h1>
+            </div>
+            <div className="lolo">
+            <SideNav/>
+            <section className="contenu">
             <ul>
                 {product.map((p, index) => (
                     <li key={index}>{p.nom} {p.apercu} </li>
                 ))}
             </ul>
-        </div>
+                </section>
+                </div>
+      </>  
     );
 };
 

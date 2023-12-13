@@ -16,8 +16,8 @@ const getAllVisitor = async () => {
 };
 
 // const getVisitorById = async(data) => {
-//     const sql = `SELECT visitor.* 
-//     FROM savefood.vistor 
+//     const sql = `SELECT visitor.*
+//     FROM savefood.vistor
 //     WHERE visitor.id = :id;
 //     `
 //     try {
@@ -29,6 +29,9 @@ const getAllVisitor = async () => {
 //     }
 
 // };
+
+
+
 
 const createOneVisitor = async (data) => {
 
