@@ -2,17 +2,19 @@ import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 import axios from 'axios';
-import HeaderVisitor from "../components/header/headerVisitor";
+// import HeaderVisitor from "../components/header/headerVisitor";
 import SideNav from "../components/sideNav/SideNav";
 import "./updateVisitor.css"
+import HeaderVisitor from "../components/header/HeaderVisitor";
 
 
 const UpdateVisitor = () => {
+    const apiURL = import.meta.env.VITE_API_URL;
     const { user, setUser } = useContext(UserContext);
     const { id } = useParams();
     const navigate = useNavigate
     useEffect(() => {
-        axios.get(`https://localhost:3000/api/visitor/${user.id}`)
+        axios.get(`${apiURL}/visitor/${user.id}`)
             .then(res => {
                 console.log(res)
                 setValues({
@@ -37,17 +39,22 @@ const UpdateVisitor = () => {
 
     const handleUpdate = (event) => {
         event.preventDefault();
-        axios.put(`https://localhost:3000/api/visitor/${user.id}`, values)
-            .then(res => {          
-                
-                console.log(res)
-            }).catch(err => console.log(err));
-        
-            if (response.status === 200) {
-                //setUser(response.data);
-                // setdelete(true)
+        axios.put(`${apiURL}/visitor/${user.id}`, values)
+        .then(res => {
+            console.log(res);
+            // Vérifiez si la mise à jour a réussi (statut 200 OK)
+            if (res.status === 200) {
+                // Mettez à jour le contexte avec les nouvelles informations de l'utilisateur
+                setUser((prevUser) => ({ ...prevUser, lastname: values.lastname }));
+
+                // Naviguez vers la page souhaitée
                 navigate(`/uservisitor/${user.id}`);
+            } else {
+                // Gérez d'autres statuts de réponse si nécessaire
+                console.log('La mise à jour a échoué avec le statut :', res.status);
             }
+        })
+        .catch(err => console.log(err));
     }
 
     return (<>
@@ -58,26 +65,26 @@ const UpdateVisitor = () => {
         <div className="lolo">
             <SideNav/>
             <section className="contenu">
-            <form onSubmit={handleUpdate}>
-            <h2>update</h2>
+            <form className="updateform" onSubmit={handleUpdate}>
+            <h2>Profil</h2>
             
             <div>
-                <label htmlFor="">Nom</label>
-                <input type="text" value={values.lastname} onChange={e => setValues({...values, lastname: e.target.value})} />
+                <label className="label" htmlFor="">Nom</label>
+                <input className="inputuv" type="text" value={values.lastname} onChange={e => setValues({...values, lastname: e.target.value})} />
             </div>
             <div>
-                <label htmlFor="">Email</label>
-                <input type="email" value={values.email} onChange={e => setValues({...values, email: e.target.value})} />
+                <label className="label" htmlFor="">Email</label>
+                <input className="inputuv"  type="email" value={values.email} onChange={e => setValues({...values, email: e.target.value})} />
+            </div>
+            <div className="password">
+                <label className="label" htmlFor="">Mot de passe</label>
+                <input className="inputuv" type="password" value={values.motdepasse} onChange={e => setValues({...values, motdepasse: e.target.value})} />
             </div>
             <div>
-                <label htmlFor="">Mot de passe</label>
-                <input type="password" value={values.motdepasse} onChange={e => setValues({...values, motdepasse: e.target.value})} />
+                <label className="label" htmlFor="">Ville</label>
+                <input className="inputuv" type="text" value={values.ville } onChange={e => setValues({...values, ville: e.target.value})} />
             </div>
-            <div>
-                <label htmlFor="">Ville</label>
-                <input type="text" value={values.ville } onChange={e => setValues({...values, ville: e.target.value})} />
-            </div>
-            <button type="submit">Submit</button>
+            <button className="submit" type="submit">Submit</button>
         </form>
             </section>
             </div>

@@ -1,4 +1,4 @@
-.contenu {
+.details {
     margin-right: 10px;
     margin-top: 20px;
     width: 75%;
@@ -9,6 +9,8 @@
     display: flex;
 }
 
+
+
 @media (max-width:1216px) {
     .lolo {
         display: block;
@@ -17,5 +19,11 @@
     .contenu{
         width: 100%;
        
+    }
+}
+
+@media (max-width: 280px) {
+    .username{
+        font-size: 20px;
     }
 }

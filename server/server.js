@@ -24,6 +24,7 @@ app.use(cors(
 
 router.use(cors());
 router.use(express.json());
+router.use(express.static('public'));
 
 // liste des routeurs
 // router.get('/', (req, res) => res.status(200).json('coucou'));

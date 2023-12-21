@@ -22,14 +22,14 @@ const Header = () => {
               </label>
             </div>
             <div className="nav-links">
-              <Link to="/Register">
-              <a className="a-propos">A propos</a>
+              <Link to="/Register" className="a-propos">
+              A propos
             </Link>
-            <Link to="/Register">
-              <a className="connexion">Connexion</a>
+            <Link to="/Register" className="connexion">
+              Connexion
             </Link>
-            <Link to="/Contact">
-              <a className="contact">Contact</a>
+            <Link to="/Contact" className="contact">
+              Contact
             </Link>
             
            

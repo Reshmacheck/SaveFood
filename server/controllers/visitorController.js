@@ -105,6 +105,8 @@ const visitorById = async (req, res) => {
     }
 };
 
+
+
 const updateVisitor = async (req, res) => {
     
     try {
