@@ -13,12 +13,20 @@ const UserVisitor = () => {
         <>
             <HeaderVisitor /> 
             <div>
-          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hi {user.lastname}</h1>
+          <h1 className="username" style={{ margin: 10, textTransform: 'capitalize' }}> Hello {user?.lastname},</h1>
         </div>
             <div className="lolo">
             <SideNav/>
-            <section className="contenu">
-          <p >Restaurant details</p>
+            <section className="details">
+            <p style={{ color: '#104d4d', textAlign:'center'}} >Restaurant details</p>
+            <ul>
+              <li>{user?.lastname}</li>
+              <li>{user?.nom}</li>
+              <li>{user?.apercu}</li>
+              <li>{user?.adresse}</li>
+              <li>{user?.email}</li>
+              <li>{user?.numero}</li>
+            </ul>
             </section>
             </div>
         </>

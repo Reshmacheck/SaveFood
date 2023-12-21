@@ -1,7 +1,7 @@
 import dbConnection from "../service/dbconnexion.js";
 
 const getAllProduct = async () => {
-    const sql = ` SELECT product.*,restaurant.nom
+    const sql = ` SELECT product.*,restaurant.nom as restaurantName
         FROM savefood.product
         JOIN savefood.restaurant
        ON product.restaurant_id = restaurant.id ;
@@ -13,6 +13,21 @@ const getAllProduct = async () => {
         return error;
     }
 };
+
+
+// const getProductByRestaurantId = async (req, res) => {
+//     try {
+//         const {  restaurant_id } = req.params;
+//         const [rows, fields] = await dbConnection.query("select product.* FROM savefood.product   WHERE restaurant_id = ?", [restaurant_id]);
+//         return rows.length > 0 ? rows : null; 
+        
+//     } catch (error) {
+//         console.log(error);
+//         res.status(500).json({
+//             status: 500
+//         });
+//     }
+// };
 
 const createOneProduct = async (data) => {
     const sql = `

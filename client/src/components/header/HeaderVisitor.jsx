@@ -1,9 +1,20 @@
+import { useContext } from "react";
+import Logout from "../deconnexion/Logout";
 import "./headerVisitor.css";
 // import bol from "../../assets/bol.jpg";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
+import { UserContext } from "../../context/UserContext";
 
 
 const HeaderVisitor = () => {
+
+  const { user, setUser } = useContext(UserContext);
+  const navigate = useNavigate()
+
+  const logout = () => {   
+        setUser(null)
+        navigate('/') }
+
   return <>
     
           <header className="header">
@@ -23,14 +34,14 @@ const HeaderVisitor = () => {
                 </label>
               </div>
               <div className="nav-links">
-                <Link to="/Register">
-                <a className="a-propos">A propos</a>
+                <Link to="/Register" className="a-propos">
+                A propos
               </Link>
-              <Link to="/Register">
-                <a className="panier">Panier</a>
+              <Link to="/Register" className="panier">
+                Contact
               </Link>
-              <Link to="/Register">
-                <a className="deconnexion">Déconnexion</a>
+              <Link to="/Register" className="deconnexion" onClick={logout}>
+              Déconnexion
               </Link>
               
              

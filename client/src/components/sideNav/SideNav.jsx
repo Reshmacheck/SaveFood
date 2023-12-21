@@ -4,7 +4,7 @@ import {Link, useLocation} from 'react-router-dom'
 import "./sideNav.css";
 import { UserContext } from "../../context/UserContext";
 
-
+const apiURL = import.meta.env.VITE_API_URL;
 
 const SideNav = () => {
     const { id } = useParams()
@@ -14,7 +14,7 @@ const SideNav = () => {
     const handleSubmitdelete= async (e) => {
         e.preventDefault();
         // const values = Object.fromEntries(new FormData(e.target));
-        const requestInfos = new Request(`https://localhost:3000/api/visitor/${user.id}`, {
+        const requestInfos = new Request(`${apiURL}/visitor/${user?.id}`, {
           method: 'delete',
           headers: {
             'Content-Type': 'application/json',
@@ -42,29 +42,29 @@ const SideNav = () => {
         <section className="side-nav">     
           <ul>
           <li>
-            <Link to={`/uservisitor`}>
+            <Link to={`/uservisitor`} className={getLinkClassName(`/uservisitor`)}>
                 {/* <a className="link"> Restaurant details</a> */}
-                <a className={getLinkClassName(`/uservisitor`)}>Restaurant details</a>
+                Restaurant details
             </Link>
           </li>
           <hr color="#104d4d"/>
           <li>
-            <Link to={`/updatevisitor/${user.id}`} className={getLinkClassName(`/updatevisitor/${user.id}`)}>
-              <a className={getLinkClassName(`/updatevisitor/${user.id}`)}>Update personal information</a>
+            <Link to={`/updatevisitor/${user?.id}`} className={getLinkClassName(`/updatevisitor/${user?.id}`)}>
+              Modifiée les données personnelles
             </Link>
           </li>
             <hr color="#104d4d" />
-            <Link to={`/product`}>
-          <li><a className={getLinkClassName(`/product`)}>Voir mes products ajouter</a></li>
-          </Link> 
+           
+          <li> <Link to={`/product`} className={getLinkClassName(`/product`)}>Voir mes products ajouter</Link> </li>
+          
             <hr color="#104d4d" />
-          <Link to={`/upd`}>
-          <li><a className={getLinkClassName(`/upd`)}>Ajouter un produit</a></li>
-            </Link> 
+         
+          <li> <Link to={`/upd`} className={getLinkClassName(`/upd`)}>Ajouter un produit</Link> </li>
+            
             <hr color="#104d4d"/>
-          <Link to={`/upda`}>
-          <li><a className={getLinkClassName(`/upda`)} onClick={handleSubmitdelete}>Delete my account</a></li>
-           </Link>    
+        
+          <li>  <Link to={`/upda`} className={getLinkClassName(`/upda`)} onClick={handleSubmitdelete}>Delete my account </Link> </li>
+             
           </ul>
           </section>
        </>     

@@ -2,9 +2,7 @@ import dbConnection from "../service/dbconnexion.js";
 
 const getAllRestaurant = async () => {
     const sql = `SELECT restaurant.*
-        FROM savefood.restaurant
-        JOIN savefood.role
-        ON role.id = restaurant.role_id;
+        FROM savefood.restaurant;
     `
     try {
         const [results] = await dbConnection.execute(sql);

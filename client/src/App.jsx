@@ -3,10 +3,11 @@ import './App.css'
 import Index from './Pages/Index'
 import Register from './Pages/Register'
 import ContactPage from './Pages/Contact'
-import AllProduct from './Pages/product'
+import AllProduct from './Pages/Product'
 import { UserProvider } from './context/UserContext'
 import UserVisitor from './Pages/Userspace'
 import UpdateVisitor from './Pages/UpdateVisitor'
+import ProtectedRoute from './components/protectroute/ProtectedRoute'
 
 
 
@@ -18,7 +19,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/product" element={<AllProduct />} />
-        <Route path="/uservisitor" element={<UserVisitor />} />
+
+          <Route path="/uservisitor" element={<ProtectedRoute><UserVisitor /></ProtectedRoute>} />
+        
         {/* <Route path="/read/id" element={<Read />} /> */}
         <Route path="/updatevisitor/:id" element={<UpdateVisitor/>} />
 

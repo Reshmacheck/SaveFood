@@ -7,11 +7,12 @@ const Form = () => {
 
   const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
+  const apiURL = import.meta.env.VITE_API_URL;
 
   const handleSubmitSignup = async (e) => {
     e.preventDefault();
     const values = Object.fromEntries(new FormData(e.target));
-    const requestInfos = new Request('https://localhost:3000/api/visitor/signup', {
+    const requestInfos = new Request(`${apiURL}/visitor/signup`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -32,7 +33,7 @@ const Form = () => {
   const handleSubmitLogin = async (e) => {
     e.preventDefault();
     const values = Object.fromEntries(new FormData(e.target));
-    const requestInfos = new Request('https://localhost:3000/api/visitor/login', {
+    const requestInfos = new Request(`${apiURL}/visitor/login`, {
       method: 'post',
       headers: {
         'Content-Type': 'application/json',
@@ -60,7 +61,7 @@ const Form = () => {
       type="radio"
       name="tab"
       className="sign-in"
-      defaultChecked=""
+      defaultChecked={true}
     />
     <label htmlFor="tab-1" className="tab">
       Se connecter
@@ -75,7 +76,7 @@ const Form = () => {
           <label htmlFor="user" className="label">
             Email
           </label>
-          <input id="user" type="text" className="input" name="email" />
+          <input id="user" type="text" className="input" name="email" required/>
         </div>
         <div className="group">
           <label htmlFor="pass" className="label">
@@ -87,6 +88,7 @@ const Form = () => {
             className="input"
                   data-type="password"
                   name="motdepasse"
+                  required
           />
         </div>
         <div className="group">
@@ -125,7 +127,8 @@ const Form = () => {
               id="visiteur"
               name="role_id"
                     // defaultValue="email"
-                   value="1"
+                    value="1"
+                    required
             />
             <label htmlFor="contactChoice1" className="role">
               Visiteur
@@ -148,7 +151,7 @@ const Form = () => {
           </label>
                 <input
                   // id="user"
-                  type="text" className="input" name="lastname" />
+                  type="text" className="input" name="lastname" required />
         </div>
         <div className="group">
           <label htmlFor="pass" className="label">
@@ -160,6 +163,7 @@ const Form = () => {
             className="input"
                   data-type="password"
                   name="motdepasse"
+                  required
           />
         </div>
         {/* <div className="group">
@@ -180,7 +184,7 @@ const Form = () => {
                 <input
                   // id="pass"
                   type="text"
-                  className="input" name="email" />
+                  className="input" name="email" required />
               </div>
             <div className="group">
           <label htmlFor="pass" className="label">
