@@ -4,7 +4,7 @@ import { allVisitor, createVisitor, visitorById, updateVisitor, deleteVisitor, c
 
 const visitorRouter = express.Router();
 
-visitorRouter.get('/', allVisitor);
+visitorRouter.get('/', allVisitor) ;
 visitorRouter.get('/:id', visitorById);
 visitorRouter.post('/signup', createVisitor);
 visitorRouter.post('/login', checkVisitorLogin);

@@ -7,6 +7,8 @@ import rolesRouter from './routes/role.js';
 import visitorRouter from './routes/visitor.js';
 import productRouter from './routes/product.js';
 import cors from 'cors';
+import http from 'http';
+
 
 // routeur
 const app = express();
@@ -40,6 +42,9 @@ const options = {
     cert: await fs.readFile('ca/cert.pem'),
 };
 
-const server = https.createServer(options, app);
+// const server =
+//     process.env.NODE_ENV 
+// https.createServer(options, app);
+const server = process.env.NODE_ENV === "dev" ? https.createServer(options, app) : http.createServer(app);
 
 export default server;
