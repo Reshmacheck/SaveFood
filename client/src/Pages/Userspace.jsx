@@ -1,4 +1,4 @@
-import HeaderVisitor from "../components/header/headerVisitor";
+import HeaderVisitor from "../components/header/HeaderVisitor";
 import "./userspace.css"
 // import { UserContext } from "context/UserContext";
 import { useContext } from "react";

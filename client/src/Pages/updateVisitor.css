@@ -22,7 +22,7 @@
 
 }
 
-h2{
+.profil{
     text-align: center;
     color: white;
     margin: 1vh;
@@ -65,7 +65,7 @@ h2{
         width: 100%;
        
     }
-    h2 {
+    .profil{
         font-size: 20px;
     }
     .updateform{

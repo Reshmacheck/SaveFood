@@ -1,7 +1,7 @@
 import dbConnection from "../service/dbconnexion.js";
 
 const getAllProduct = async () => {
-    const sql = ` SELECT product.*,restaurant.nom as restaurantName
+    const sql = ` SELECT product.*,restaurant.nom as restaurantName, restaurant.adresse as restaurantAdresse, restaurant.photo as restoImage, restaurant.apercu as description, restaurant.numero as restoNumero
         FROM savefood.product
         JOIN savefood.restaurant
        ON product.restaurant_id = restaurant.id ;

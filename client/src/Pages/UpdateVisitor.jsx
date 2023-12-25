@@ -66,7 +66,7 @@ const UpdateVisitor = () => {
             <SideNav/>
             <section className="contenu">
             <form className="updateform" onSubmit={handleUpdate}>
-            <h2>Profil</h2>
+            <h2 className="profil">Profil</h2>
             
             <div>
                 <label className="label" htmlFor="">Nom</label>

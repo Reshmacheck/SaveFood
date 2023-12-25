@@ -8,6 +8,7 @@ import { UserProvider } from './context/UserContext'
 import UserVisitor from './Pages/Userspace'
 import UpdateVisitor from './Pages/UpdateVisitor'
 import ProtectedRoute from './components/protectroute/ProtectedRoute'
+import Visitorspace from './Pages/Visitorspace'
 
 
 
@@ -20,7 +21,8 @@ function App() {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/product" element={<AllProduct />} />
 
-          <Route path="/uservisitor" element={<ProtectedRoute><UserVisitor /></ProtectedRoute>} />
+        <Route path="/uservisitor" element={<ProtectedRoute><UserVisitor /></ProtectedRoute>} />
+        <Route path="/visitor" element={<ProtectedRoute><Visitorspace /></ProtectedRoute>} />
         
         {/* <Route path="/read/id" element={<Read />} /> */}
         <Route path="/updatevisitor/:id" element={<UpdateVisitor/>} />

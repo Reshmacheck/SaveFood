@@ -46,7 +46,14 @@ const Form = () => {
     // stocker le user dans le contexte
     if (response.status === 200) {
       setUser(response.data);
-      navigate(`/uservisitor`);
+      const roleId = response.data.role_id
+      if (roleId === 3) {
+        navigate(`/uservisitor`); 
+      }
+      if (roleId === 1) {
+        navigate(`/visitor`); 
+        
+      }
     }
     // console.log(response);
     

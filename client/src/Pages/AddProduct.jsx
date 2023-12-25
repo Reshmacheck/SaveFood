@@ -1,4 +1,4 @@
-import HeaderVisitor from "../components/header/headerVisitor";
+import HeaderVisitor from "../components/header/HeaderVisitor";
 
 const CreateProduct = () => {
     return (

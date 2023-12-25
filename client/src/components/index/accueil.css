@@ -1,13 +1,13 @@
 .header-image{
     width: 100%;
-    height: 93vh;
+    height: 95vh;
 
   }
 
   .recherche{
     position: absolute;
     z-index: 2;
-	height: 10px;
+    padding-bottom: 20px;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
@@ -21,3 +21,50 @@
   }
 
  
+
+ @media (max-width:2100px){
+  .recherche{
+    font-size: 40px;
+  }
+ }
+
+ @media (max-width:1650px){
+  .recherche{
+    font-size: 35px;
+    height: 15px;
+  }
+ }
+
+ @media (max-width:1452px) {
+  .recherche{
+    font-size: 30px;
+  }
+ }
+
+ @media (max-width:1245px){
+  .recherche{
+    font-size: 150%;
+  }
+ }
+ 
+ @media (max-width:992px){
+  .recherche{
+    font-size: 140%;
+  }
+ }
+ 
+ @media (max-width:925px){
+  .recherche{
+    font-size: 130%;
+  }
+ }
+
+ @media (max-width:800px){
+  .recherche{
+    top: 50%;
+    font-size:large;
+    -webkit-text-stroke-width: 0.7px;
+  -webkit-text-stroke-color: white;
+  color: #104d4d;
+  }
+ }

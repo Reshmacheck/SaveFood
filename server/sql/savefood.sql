@@ -10,7 +10,7 @@ CREATE TABLE savefood.role(
 );
 
 CREATE TABLE savefood.restaurant(
-    id TINYINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id SMALLINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(50),
     -- email VARCHAR(50) NOT NULL UNIQUE,
     -- motdepasse VARCHAR(100) NOT NULL,
@@ -29,7 +29,7 @@ CREATE TABLE savefood.visitor(
     motdepasse VARCHAR(200) NOT NULL,
     ville VARCHAR(200),
     role_id TINYINT(1) UNSIGNED NOT NULL,
-    restaurant_id TINYINT UNSIGNED,
+    restaurant_id SMALLINT UNSIGNED,
     FOREIGN KEY(role_id) REFERENCES savefood.role(id),
     FOREIGN KEY(restaurant_id) REFERENCES savefood.restaurant(id) ON DELETE CASCADE
 );
@@ -45,7 +45,7 @@ CREATE TABLE savefood.product(
     price DECIMAL(4,2) NOT NULL,
     initial_price DECIMAL(4,2) NOT NULL,
     quantity TINYINT(2) NOT NULL,
-    restaurant_id TINYINT UNSIGNED,
+    restaurant_id SMALLINT UNSIGNED,
     FOREIGN KEY(restaurant_id) REFERENCES savefood.restaurant(id)
 );
 
@@ -65,7 +65,7 @@ INSERT INTO savefood.role VALUES
 ;
 -- 1/ INSERT LES OBJETs
 INSERT INTO savefood.restaurant VALUES 
-     (NULL, 'pizzaria', '4, rue belfort, 93000 bobigny','pizzerai.jpg','notre magasin propose les meilleur pizza du monde','0147657793', 1),
+     (NULL, 'Paul', '4, rue belfort, 93000 bobigny','pizzerai.jpg','notre magasin propose les meilleur pizza du monde','0147657793', 1),
      (NULL, 'kashmir','9, allée des aulnes, 94000 creteil','kashmir.png','Venez aventurer les spécialité indienne','0190654535', 1)
     ;    
 -- 2/ verifier les selects
@@ -78,7 +78,9 @@ INSERT INTO savefood.visitor VALUES
 
 
  INSERT INTO savefood.product VALUES
-    (NULL, 'Pizza Norvegiène', 'saumon, mozarella, herbe de province','pizza.jpg', '2023-07-29', 3.50 , 10.50 , 3, 1),
+    (NULL, 'Panier Patisseries', ' un panier composée de patisserie','patisserie.jpg', '2024-01-28', 3.50 , 10.50 , 3, 1),
+    (NULL, 'Panier petit dejeuner', 'un panier composée de 7 à 10 unitées de petit-dejeuner','petitdejeuner.jpg', '2024-01-29', 4.00 , 11.50 , 3, 1),
+    (NULL, 'Pizza ', 'poulet curry , jambon, creme fraiche','pizza-indienne.jpg', '2024-01-29', 4.00 , 11.50 , 3, 1),
     (NULL, 'cheez naan', 'fromage, pate, moelleux','cheese_nan.jpg', '2023-07-30', 0.50 , 2.50 , 5, 2)
      ;
 

@@ -1,11 +1,11 @@
 import Header from "../components/header/Header";
-import Form from "../components/register/form";
+import Form from "../components/register/Form";
 // import "./register.css";
 
 const Register = () => {
     return (
         <>
-            <Header />
+            <Header/>
             <Form/>
             
             

@@ -50,22 +50,25 @@ const AllProduct = () => {
             <SideNav/>
             <section className="product-add">
             <div className="paading-product">
-    {product.map((p, index) => (
-        <div key={index} className="product-box">
-            <div>
-            <img src={p.photo} alt={p.nom} className="product-image" />
-            </div>
+               {product.map((p, index) => (
+             <div key={index} className="product-box">
+               <div>
+                  <img src={p.photo} alt={p.nom} className="product-image" />
+               </div>
          
-         <div className="product-details">
-             <h3 className="product-name">{p.nom}</h3>
-             <p className="product-preview">{p.apercu}</p>
-             <button className="more-info-button" onClick={() => handleMoreInfoClick(p)}>En savoir plus</button>
-         </div>
-     </div>
-    ))}
-</div>
-                </section>
-                </div>
+               <div className="product-details">
+                 <h3 className="product-name">{p.nom}</h3>
+                 <p className="product-preview">{p.apercu}</p>
+                 <button className="more-info-button" onClick={() => handleMoreInfoClick(p)}>En savoir plus</button>
+              </div>
+             </div>
+              ))}
+            </div>
+            </section>
+            </div>
+            <footer>
+                <h2>POPO</h2>
+            </footer>
       </>  
     );
 };
