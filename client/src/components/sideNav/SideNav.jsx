@@ -59,7 +59,7 @@ const SideNav = () => {
           
             <hr color="#104d4d" />
          
-          <li> <Link to={`/upd`} className={getLinkClassName(`/upd`)}>Ajouter un produit</Link> </li>
+          <li> <Link to={`/createproduct`} className={getLinkClassName(`/createproduct`)}>Ajouter un produit</Link> </li>
             
             <hr color="#104d4d"/>
         

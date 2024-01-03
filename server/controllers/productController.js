@@ -1,7 +1,7 @@
 import { getAllProduct, createOneProduct } from "../repositories/productRepo.js"
 import dbConnection from "../service/dbconnexion.js";
-
-import fs from 'node:fs/promises'
+import fs from 'node:fs/promises';
+import { getExtensionFromMimeType } from '../service/filesService.js';
 
 const allProduct = (req, res) => {
     getAllProduct().then(data => {
@@ -14,8 +14,8 @@ const allProduct = (req, res) => {
 }
 
 const createProduct = async (req, res) => {
-    console.log(req.body, req.files.shift());
-    const files = req.files.shift();
+    console.log(req.body, req.files[0]);
+    const files = req.files[0];
     const fullFileName = `${files.path}.${getExtensionFromMimeType(files.mimetype)}`;
     const fileName = `${files.filename}.${getExtensionFromMimeType(files.mimetype)}`;
     
@@ -27,11 +27,30 @@ const createProduct = async (req, res) => {
    createOneProduct(req.body).then(data => {
        return res.status(200).json({
           status: 200,
-          message: "OK",
+          message: "created",
           data: data,
        });
    }) 
 };
+
+
+const productById = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const [rows, fields] = await dbConnection.query("select * from product where id = ?", [id]);
+        res.json({
+            data: rows,
+            message : " select product succesfully by id"
+            
+        });
+    } catch (error) {
+        console.log(error);
+        res.json({
+            status: 500
+        });
+    }
+};
+
 
 
 
@@ -56,4 +75,4 @@ const productByRestaurantId = async (req, res) => {
 
 
 
-export { allProduct, createProduct, productByRestaurantId };
+export { allProduct, createProduct, productByRestaurantId, productById };

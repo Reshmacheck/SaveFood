@@ -28,7 +28,7 @@ export async function getAllProduct() {
 export async function getProducByRestaurantId(user) {
     // const { user, setUser } = useContext(UserContext);
     // console.log(user)
-    const URL = `${apiURL}/product/${user.restaurant_id}`;
+    const URL = `${apiURL}/product/restaurant/${user.restaurant_id}`;
 
     try {
         const requestInfos = new Request(URL, {
@@ -47,6 +47,31 @@ export async function getProducByRestaurantId(user) {
         throw new Error(`Erreur lors de la récupération des cours : ${error.message}`);
     }
 }
+
+export async function getProducById(productId) {
+    // const { user, setUser } = useContext(UserContext);
+    // console.log(user)
+    const URL = `${apiURL}/product/${productId}`;
+
+    try {
+        const requestInfos = new Request(URL, {
+            method: "get",
+        });
+        
+        const req = await fetch(requestInfos);
+
+        if (!req.ok) {
+            throw new Error(`Erreur lors de la récupération des cours : ${req.status}`);
+        }
+
+        const res = await req.json();
+        return res;
+    } catch (error) {
+        throw new Error(`Erreur lors de la récupération des cours : ${error.message}`);
+    }
+}
+
+
 
 export async function getAllRestaurant() {
     const URL = `${apiURL}/restaurant`;
@@ -70,7 +95,7 @@ export async function getAllRestaurant() {
 
 }
 
-const createProduct = async (data) => {
+export async function createProduct (data) {
 
     const URL = `${apiURL}/product/create`;
     try {
@@ -92,4 +117,3 @@ const createProduct = async (data) => {
     }
 }
 
-export  { createProduct }

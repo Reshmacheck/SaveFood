@@ -36,8 +36,9 @@
     color: var(--vert);
   }
   
-  .nav > .nav-links > a:hover {
-    background-color: rgba(0, 0, 0, 0.3);
+  
+  .deconnexion:hover {
+    color:rgb(130, 8, 8) !important;
   }
   
   .nav > #nav-check {

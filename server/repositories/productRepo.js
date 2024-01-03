@@ -32,7 +32,7 @@ const getAllProduct = async () => {
 const createOneProduct = async (data) => {
     const sql = `
        INSERT INTO savefood.product VALUES 
-       (NULL, :nom, :apercu, :photo, :dateexpiration, :price, :initial_price, :quantity, :restaurant_id );
+       (NULL, :nom, :apercu, :image, :dateexpiration, :price, :initial_price, :quantity, :restaurant_id );
     `;
 
     try {

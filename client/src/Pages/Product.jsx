@@ -53,7 +53,7 @@ const AllProduct = () => {
                {product.map((p, index) => (
              <div key={index} className="product-box">
                <div>
-                  <img src={p.photo} alt={p.nom} className="product-image" />
+                  <img src={p.image} alt={p.nom} className="product-image" />
                </div>
          
                <div className="product-details">
