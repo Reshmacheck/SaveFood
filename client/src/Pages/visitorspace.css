@@ -24,7 +24,7 @@
     width: 100%;
     height:50%;
     border-radius: 15px 15px 0px 0px;   
-    background:url('https://media.cntraveler.com/photos/61017da4a41bc3aa30d3b547/16:9/w_960%2Cc_limit/Liza%2520nouveau%2520restaurant%2520%25C2%25A9%2520Joann%2520Pai%2520(39).jpg');
+    /* background:url('https://media.cntraveler.com/photos/61017da4a41bc3aa30d3b547/16:9/w_960%2Cc_limit/Liza%2520nouveau%2520restaurant%2520%25C2%25A9%2520Joann%2520Pai%2520(39).jpg'); */
     background-size: cover ;
     position: relative;
     
@@ -66,7 +66,7 @@
     padding: 5px;
     display: block;
     text-align: center;
-    background: green;
+    background: #104d4d;
     text-decoration: none;
     color: white;
     border-radius: 5px;
@@ -94,6 +94,10 @@
     .title{
         padding: 10px;
     }
+
+    .description {
+        margin-top: 17px;
+    }
 }
 @media (min-width:1050px) {
     .card{
@@ -108,5 +112,14 @@
         font-weight:400;
         padding-top:15px;
         padding-bottom: 10px;
+        height: 43px;
+        width:350px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .description {
+        margin-top: 4px;
     }
 }

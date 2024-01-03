@@ -1,16 +1,22 @@
+import { useContext } from 'react';
+import { createProduct } from '../../service/api'
+import { UserContext } from '../../context/UserContext';
 
-
-const createProduct = () => {
-
+const FormProduct = () => {
+  const { user, setUser } = useContext(UserContext);
+  console.log(user)
   const handleSubmit = e => {
     e.preventDefault();
-    const formData = new FormDate(e.target);
+    const formData = new FormData(e.target);
+    formData.append("restaurant_id", user.restaurant_id);
+    console.log(formData)
+    createProduct(formData);
   }
 
   
   return(
   <>
-    <form className="" onSubmit={handleSubmit} enctype="multipart/form-data">
+    <form className="" onSubmit={handleSubmit} encType="multipart/form-data">
       
       <div className="group">
         <label htmlFor="user" className="label">
@@ -38,7 +44,7 @@ const createProduct = () => {
               <input
                 // id="imageUpload"
                 type="file"
-                className="input" name="photo"
+                className="input" name="image"
                 accept="image/*"
                 />
             </div>
@@ -72,7 +78,7 @@ const createProduct = () => {
           </label>
           <input id="" type="number" className="input" name="quantity"
             min="1"
-            value="1" />
+             />
         </div>
       <div className="group">
         <input type="submit" className="button" defaultValue="Sign Up" />
@@ -84,5 +90,5 @@ const createProduct = () => {
   )
 }
   
-export default createProduct
+export default FormProduct
 

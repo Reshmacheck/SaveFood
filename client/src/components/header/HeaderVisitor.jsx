@@ -4,6 +4,8 @@ import "./headerVisitor.css";
 // import bol from "../../assets/bol.jpg";
 import {Link, useNavigate} from 'react-router-dom'
 import { UserContext } from "../../context/UserContext";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCartShopping, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
 
 
 const HeaderVisitor = () => {
@@ -39,9 +41,16 @@ const HeaderVisitor = () => {
               </Link>
               <Link to="/Register" className="panier">
                 Contact
+            </Link>
+            <Link to="/Favoris" className="panier">
+                Favoris
+            </Link>
+            <Link className="shopping" onClick={Logout}>
+              <FontAwesomeIcon icon={faCartShopping} />
+              
               </Link>
-              <Link to="/Register" className="deconnexion" onClick={logout}>
-              Déconnexion
+              <Link className="deconnexion" onClick={Logout}>
+              <FontAwesomeIcon icon={faRightFromBracket} />
               </Link>
               
              

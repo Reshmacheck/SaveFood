@@ -9,6 +9,8 @@ import UserVisitor from './Pages/Userspace'
 import UpdateVisitor from './Pages/UpdateVisitor'
 import ProtectedRoute from './components/protectroute/ProtectedRoute'
 import Visitorspace from './Pages/Visitorspace'
+import CreateProduct from './Pages/AddProduct'
+import ProductDetails from './Pages/ProductDetails'
 
 
 
@@ -23,6 +25,8 @@ function App() {
 
         <Route path="/uservisitor" element={<ProtectedRoute><UserVisitor /></ProtectedRoute>} />
         <Route path="/visitor" element={<ProtectedRoute><Visitorspace /></ProtectedRoute>} />
+        <Route path="/details/:productId" element={<ProductDetails />} />
+        <Route path="/createproduct" element={<CreateProduct />} />
         
         {/* <Route path="/read/id" element={<Read />} /> */}
         <Route path="/updatevisitor/:id" element={<UpdateVisitor/>} />

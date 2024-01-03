@@ -40,7 +40,7 @@ CREATE TABLE savefood.product(
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,
     apercu VARCHAR(200),
-    photo VARCHAR(100),
+    image VARCHAR(100),
     dateexpiration DATE NOT NULL,
     price DECIMAL(4,2) NOT NULL,
     initial_price DECIMAL(4,2) NOT NULL,

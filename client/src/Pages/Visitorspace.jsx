@@ -5,6 +5,7 @@ import { UserContext } from "../context/UserContext";
 import { getAllProduct } from "../service/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
 const Visitorspace = () => {
@@ -55,7 +56,8 @@ const Visitorspace = () => {
                 {product.map((p, index) => (
                 
                     <div key={index}className="card">
-                        <div className="img">
+                        <div className="img" style={{ backgroundImage: `url('https://localhost:3000/img/${p.image}')` }}>
+                       
                         <h2  style={{ textTransform: 'capitalize' }} className="restaurantName">{p.restaurantName}</h2>
                         </div>
                     <div className="title">
@@ -63,9 +65,9 @@ const Visitorspace = () => {
                             <p className="apercu">{p.apercu}</p>
                          <div className="description">
                           <p className="prix">{p.price}€</p>
-                          <a href="" className="button-product">
+                          <Link to={`/details/${p.id}`} className="button-product">
                            En savoir plus
-                          </a>
+                          </Link>
                          </div>
                             <FontAwesomeIcon
                                 icon={faHeart}
