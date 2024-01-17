@@ -23,7 +23,7 @@ const Accueil = () => {
   const imageUrl = windowWidth >= 800 ? environnement : secondwindow;
   
     return <>
-      <section className="image">
+      <section className="image-acceuil">
     <img className="header-image" src={imageUrl} alt="image de plante" />
     <p className="recherche">Luttons contre le gaspillage alimentaire</p>
       </section>

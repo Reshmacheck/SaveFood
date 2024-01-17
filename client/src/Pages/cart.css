@@ -1,0 +1,121 @@
+.cart-title {
+font-size:18px;
+margin: 10px;
+
+}
+
+.quantite-panier {
+    margin-top: 3px;
+    width: 30px;
+    height: 25px;
+}
+
+.panier-flex{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.quantite-flex {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    
+}
+
+.paragraph {
+    margin: 5px;
+    font-size: 10px;
+    font-weight: 300;  
+    
+}
+
+.delete-panier {
+    background-color: #104d4d ;
+    padding: 0;
+    width: 20px;
+    border: none;
+    border-radius: 10px;
+    
+}
+.button-reserver{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    
+}
+.reserver-panier{
+    background-color: #104d4d;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+}
+.panier-row {
+    margin: 10px;
+    display: block;
+    
+
+}
+.div-hr {
+    display: flex;
+}
+
+.somme{
+    margin: 15px;
+    display: flex;
+    justify-content:space-between;
+ 
+}
+.total-title{
+    color: #104d4d;
+    font-size: 15px;
+}
+.total{
+    font-size: 15px;
+    color: #104d4d;
+}
+
+@media (min-width:490px) {
+    .paragraph {
+        margin: 5px;
+        font-size: 15px;
+        font-weight: 400;  
+    } 
+    .quantite-panier {
+    width: 32px;
+
+    }
+    .reserver-panier{
+        width: 60%;
+    }
+
+    .total-title{
+        font-size: 20px;
+    }
+    .total{
+        font-size: 20px;
+    }
+
+    .delete-panier{
+         margin-left: 20px;
+    }
+    .somme{
+        justify-content:space-around ;
+    }
+
+}
+
+@media (min-width:830px) {
+
+    .button-reserver{
+        margin: 30px;
+    }
+    .reserver-panier {
+        height: 40px;
+        font-size: 15px;
+    }
+    .paragraph{
+        font-size: 17px;
+    }
+    
+}

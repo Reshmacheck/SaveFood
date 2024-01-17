@@ -10,8 +10,10 @@ const ProtectedRoute = ({children}) => {
 
     useEffect(() => {
         if (user === null) {
+            console.log('lolo')
             // setFlashMessage('Access denied')
             navigate('/')
+            
         }
     })
 

@@ -47,7 +47,11 @@ li a {
 
 
 
-
+@media (min-width:1000px) {
+    li a {
+        padding: 5px;
+    }
+}
 
 
 @media (max-width:1216px) {
@@ -93,7 +97,10 @@ li a {
 }
 
 
-@media (max-widt:280px){
-
+@media (max-width:290px){
+  li a {
+    font-size: 8px;
+    font-weight: 400;
+  }
     
 }

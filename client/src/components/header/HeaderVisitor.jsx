@@ -1,21 +1,23 @@
 import { useContext } from "react";
-import Logout from "../deconnexion/Logout";
 import "./headerVisitor.css";
 // import bol from "../../assets/bol.jpg";
 import {Link, useNavigate} from 'react-router-dom'
 import { UserContext } from "../../context/UserContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faRightFromBracket} from '@fortawesome/free-solid-svg-icons';
+import Logout from "../deconnexion/Logout";
+import { CartContext } from '../../context/CartContext';
 
 
 const HeaderVisitor = () => {
 
-  const { user, setUser } = useContext(UserContext);
-  const navigate = useNavigate()
+  // const { user, setUser } = useContext(UserContext);
+  // const navigate = useNavigate()
 
-  const logout = () => {   
-        setUser(null)
-        navigate('/') }
+  // const logout = () => {   
+  //       setUser(null)
+  //       navigate('/') }
+  const { cart } = useContext(CartContext);
 
   return <>
     
@@ -45,11 +47,12 @@ const HeaderVisitor = () => {
             <Link to="/Favoris" className="panier">
                 Favoris
             </Link>
-            <Link className="shopping" onClick={Logout}>
+            <Link to="/cart" className="shopping">
               <FontAwesomeIcon icon={faCartShopping} />
-              
-              </Link>
-              <Link className="deconnexion" onClick={Logout}>
+              <p>({cart.length})</p>
+            </Link>
+            
+              <Link to="/" className="deconnexion" onClick={Logout}>
               <FontAwesomeIcon icon={faRightFromBracket} />
               </Link>
               

@@ -9,8 +9,9 @@ const Logout = () => {
 
 
     useEffect(() => {
-        
+        console.log('lolo')
         setUser(null)
+        console.log('lolo')
         navigate('/')
         
     })

@@ -1,17 +1,18 @@
 import { useContext } from "react";
-import HeaderVisitor from "../components/header/HeaderVisitor";
 import FormProduct from "../components/product/FormProduct";
 import { UserContext } from "../context/UserContext";
 import SideNav from "../components/sideNav/SideNav";
+import HeaderResto from "../components/header/HeaderResto";
+
 
 const CreateProduct = () => {
     const { user, setUser } = useContext(UserContext);
 
     return (
         <>
-            <HeaderVisitor /> 
+            <HeaderResto /> 
             <div>
-          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hi {user?.lastname}</h1>
+          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hello {user?.lastname},</h1>
             </div>  
             <div className="lolo">
                 <SideNav /> 

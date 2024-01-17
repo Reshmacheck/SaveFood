@@ -2,8 +2,28 @@
     margin-right: 10px;
     margin-top: 20px;
     width: 75%;
-    border: 3px solid  #a47051ff;
+
+    
 }
+
+.update-restaurant-button{
+    display: flex;
+    justify-content: center !important;
+    width: 100%;
+    margin: 40px;
+}
+a.add-update-restaurant{
+ height: 50px;
+  line-height: 50px; 
+  text-align: center;
+  width:15%;
+  border: solid 2px white;
+  color: white;
+  background-color: var(--vert);
+  border-radius: 20px;
+}
+
+
 
 .lolo{
     display: flex;

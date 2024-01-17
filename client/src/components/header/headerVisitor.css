@@ -24,18 +24,21 @@
   }
   
   .nav > .nav-links {
-    display: inline;
+    display: flex;
     float: right;
     font-size: 18px;
   }
   
   .nav > .nav-links > a {
-    display: inline-block;
+    display: flex;
     padding: 13px 10px 13px 10px;
     text-decoration: none;
     color: var(--vert);
   }
   
+  .panier {
+    display: flex;
+  }
   
   .deconnexion:hover {
     color:rgb(130, 8, 8) !important;

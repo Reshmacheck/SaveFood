@@ -5,14 +5,14 @@ import axios from 'axios';
 // import HeaderVisitor from "../components/header/headerVisitor";
 import SideNav from "../components/sideNav/SideNav";
 import "./updateVisitor.css"
-import HeaderVisitor from "../components/header/HeaderVisitor";
+import HeaderResto from "../components/header/HeaderResto";
 
 
 const UpdateVisitor = () => {
     const apiURL = import.meta.env.VITE_API_URL;
     const { user, setUser } = useContext(UserContext);
     const { id } = useParams();
-    const navigate = useNavigate
+    const navigate = useNavigate()
     useEffect(() => {
         axios.get(`${apiURL}/visitor/${user.id}`)
             .then(res => {
@@ -45,10 +45,10 @@ const UpdateVisitor = () => {
             // Vérifiez si la mise à jour a réussi (statut 200 OK)
             if (res.status === 200) {
                 // Mettez à jour le contexte avec les nouvelles informations de l'utilisateur
-                setUser((prevUser) => ({ ...prevUser, lastname: values.lastname }));
+                setUser((prevUser) => ({ ...prevUser, lastname: values.lastname, email: values.email, ville: values.ville }));
 
                 // Naviguez vers la page souhaitée
-                navigate(`/uservisitor/${user.id}`);
+                navigate(`/uservisitor`);
             } else {
                 // Gérez d'autres statuts de réponse si nécessaire
                 console.log('La mise à jour a échoué avec le statut :', res.status);
@@ -58,9 +58,9 @@ const UpdateVisitor = () => {
     }
 
     return (<>
-        <HeaderVisitor /> 
+        <HeaderResto /> 
         <div>
-          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hi {user.lastname}</h1>
+          <h1 style={{ margin: 10, textTransform: 'capitalize' }}> Hello {user.lastname},</h1>
         </div>
         <div className="lolo">
             <SideNav/>

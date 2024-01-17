@@ -37,7 +37,7 @@ const createProduct = async (req, res) => {
 const productById = async (req, res) => {
     try {
         const { id } = req.params;
-        const [rows, fields] = await dbConnection.query("select * from product where id = ?", [id]);
+        const [rows, fields] = await dbConnection.query("SELECT product.*, restaurant.nom as restaurantName, restaurant.adresse, restaurant.photo, restaurant.apercu as description, restaurant.numero FROM product JOIN restaurant ON restaurant.id = product.restaurant_id WHERE product.id = ?", [id]);
         res.json({
             data: rows,
             message : " select product succesfully by id"

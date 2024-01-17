@@ -98,25 +98,14 @@ const Form = () => {
                   required
           />
         </div>
-        <div className="group">
-          <input
-            id="check"
-            type="checkbox"
-            className="check"
-                  defaultChecked=""
-                  name="connected"
-          />
-          <label htmlFor="check">
-            <span className="icon" /> Rester connecter
-          </label>
-        </div>
-        <div className="group">
+        
+        <div className="group" style={{paddingTop: '20px'}}>
           <input type="submit" className="button" defaultValue="Sign In" />
         </div>
         <div className="hr" />
-        <div className="foot-lnk">
+        {/* <div className="foot-lnk">
           <a href="#forgot">Mot de passe oublié?</a>
-        </div>
+        </div> */}
       </form>
 
             
@@ -132,18 +121,20 @@ const Form = () => {
             <input
               type="radio"
               id="visiteur"
-              name="role_id"
+                    name="role_id"
+                    style={{marginRight:'5px'}}
                     // defaultValue="email"
                     value="1"
                     required
             />
-            <label htmlFor="contactChoice1" className="role">
+            <label htmlFor="contactChoice1" className="role" style={{marginRight:'30px'}}>
               Visiteur
             </label>
             <input
               type="radio"
               id="Restaurateur"
-              name="role_id"
+                    name="role_id"
+                    style={{marginRight:'5px'}}
               // defaultValue="telephone"
                     value="3"
             />

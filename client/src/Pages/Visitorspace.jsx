@@ -44,7 +44,7 @@ const Visitorspace = () => {
     if (error) {
         return <p>Error: {error}</p>;
     }
-
+    
 
     return (
         <>
