@@ -12,7 +12,7 @@ const UpdateVisitor = () => {
     const apiURL = import.meta.env.VITE_API_URL;
     const { user, setUser } = useContext(UserContext);
     const { id } = useParams();
-    const navigate = useNavigate()
+    const navigate = useNavigate
     useEffect(() => {
         axios.get(`${apiURL}/visitor/${user.id}`)
             .then(res => {

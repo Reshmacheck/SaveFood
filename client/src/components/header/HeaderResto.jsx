@@ -25,12 +25,6 @@ const HeaderResto = () => {
                         </label>
                     </div>
                     <div className="nav-links">
-                        <Link to="/Register" className="a-propos">
-                            A propos
-                        </Link>
-                        <Link to="/Register" className="panier">
-                            Contact
-                        </Link>
                         <Link to="/"className="deconnexion" onClick={Logout}>
                             <FontAwesomeIcon icon={faRightFromBracket} />
                         </Link>

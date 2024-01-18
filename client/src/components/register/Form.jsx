@@ -161,6 +161,9 @@ const Form = () => {
             className="input"
                   data-type="password"
                   name="motdepasse"
+                  pattern=".{8,}"
+                  title="Le mot de passe doit contenir au moins 8 caractères."
+                  
                   required
           />
         </div>
@@ -182,7 +185,10 @@ const Form = () => {
                 <input
                   // id="pass"
                   type="text"
-                  className="input" name="email" required />
+                  className="input"
+                  name="email"
+                  title="Veuillez entrer une adresse email valide."
+                  required />
               </div>
             <div className="group">
           <label htmlFor="pass" className="label">

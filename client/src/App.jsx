@@ -14,6 +14,7 @@ import ProductDetails from './Pages/ProductDetails'
 import { CartProvider } from './context/CartContext'
 import Cart from './Pages/Cart'
 import Restaurant from './Pages/Restaurant'
+import Favoris from './Pages/Favoris'
 
 
 
@@ -33,7 +34,8 @@ function App() {
         <Route path="/restaurant/:restaurantId" element={<Restaurant/>} />
         <Route path="/uservisitor" element={<ProtectedRoute><UserVisitor /></ProtectedRoute>} />
         <Route path="/visitor" element={<ProtectedRoute><Visitorspace /></ProtectedRoute>} />
-        <Route path="/details/:productId" element={<ProductDetails />} />
+          <Route path="/details/:productId" element={<ProductDetails />} />
+          <Route path="/favoris" element={<Favoris/>} />
         <Route path="/createproduct" element={<ProtectedRoute><CreateProduct /></ProtectedRoute>} />
         
         {/* <Route path="/read/id" element={<Read />} /> */}

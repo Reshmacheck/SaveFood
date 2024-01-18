@@ -5,15 +5,15 @@ import { UserContext } from "../context/UserContext";
 import { getAllProduct } from "../service/api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart} from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const Visitorspace = () => {
 
     const [product, setProduct] = useState([]);
-
+    const navigate = useNavigate()
     const [error, setError] = useState(null);
-    const { user, setUser } = useContext(UserContext);
+    const { user, updateUserLikedProducts } = useContext(UserContext);
 
     useEffect(() => {
         // console.log(user);
@@ -33,13 +33,24 @@ const Visitorspace = () => {
                 
             });
     }, []);
-     
+    
+    
+
     const handleHeartClick = (index) => {
         const updatedProduct = [...product];
         updatedProduct[index].isLiked = !updatedProduct[index].isLiked;
         setProduct(updatedProduct);
+
+        const likedProduct = updatedProduct[index];
+
+         updateUserLikedProducts(likedProduct);
+          
+         navigate('/favoris')
+
+
     };
    
+    
 
     if (error) {
         return <p>Error: {error}</p>;

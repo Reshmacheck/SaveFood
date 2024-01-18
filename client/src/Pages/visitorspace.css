@@ -84,7 +84,13 @@
     display: none;
 }
 
+.liked{
+    color: #ac0606;  
+}
 
+.disliked{
+    color:white
+}
 
 @media (min-width:412px) {
     .card{

@@ -71,17 +71,16 @@ INSERT INTO savefood.restaurant VALUES
 -- 2/ verifier les selects
 -- check / marc
 INSERT INTO savefood.visitor VALUES
-    (NULL, 'check', '123@hotmail.fr', '$argon2i$v=19$m=16,t=2,p=1$Q1RqRzRaMVI0V2s0Q2pqaA$iThEnzmXix7lCfny+Osc3g', 'aulnay sous bois', 1, NULL),
-    (NULL, 'marc', '12@hotmail.fr', '$argon2i$v=19$m=16,t=2,p=1$Q1RqRzRaMVI0V2s0Q2pqaA$Opb7fhK22T31WBWdUms6cQ', 'aulnay sous bois', 3, 1)
+    (NULL, 'check', 'check@hotmail.fr', '$argon2i$v=19$m=16,t=2,p=1$Q1RqRzRaMVI0V2s0Q2pqaA$iThEnzmXix7lCfny+Osc3g', 'aulnay sous bois', 1, NULL),
+    (NULL, 'marc', 'marc@hotmail.fr', '$argon2i$v=19$m=16,t=2,p=1$Q1RqRzRaMVI0V2s0Q2pqaA$Opb7fhK22T31WBWdUms6cQ', 'aulnay sous bois', 3, 1)
     ;
 
 
 
  INSERT INTO savefood.product VALUES
-    (NULL, 'Panier Patisseries', ' un panier composée de patisserie','patisserie.jpg', '2024-01-28', 3.50 , 10.50 , 3, 1),
-    (NULL, 'Panier petit dejeuner', 'un panier composée de 7 à 10 unitées de petit-dejeuner','petitdejeuner.jpg', '2024-01-29', 4.00 , 11.50 , 3, 1),
-    (NULL, 'Pizza ', 'poulet curry , jambon, creme fraiche','pizza-indienne.jpg', '2024-01-29', 4.00 , 11.50 , 3, 1),
-    (NULL, 'cheez naan', 'fromage, pate, moelleux','cheese_nan.jpg', '2023-07-30', 0.50 , 2.50 , 5, 2)
+    (NULL, 'Panier Patisseries', ' un panier composée de patisserie','75bc8162ec22d09bcf1c2c48812f1d10.jpg', '2024-01-28', 3.50 , 10.50 , 3, 1),
+    (NULL, 'Panier petit dejeuner', 'un panier composée de 7 à 10 unitées de petit-dejeuner','0216933ea2011ed119243fd09c989171.jpg', '2024-01-29', 4.00 , 11.50 , 3, 1)
+    
      ;
 
 

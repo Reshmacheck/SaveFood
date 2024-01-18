@@ -38,13 +38,11 @@ const HeaderVisitor = () => {
                 </label>
               </div>
               <div className="nav-links">
-                <Link to="/Register" className="a-propos">
-                A propos
+                <Link to="/visitor" className="acceuil">
+                Acceuil
               </Link>
-              <Link to="/Register" className="panier">
-                Contact
-            </Link>
-            <Link to="/Favoris" className="panier">
+              
+            <Link to="/favoris" className="panier">
                 Favoris
             </Link>
             <Link to="/cart" className="shopping">
